@@ -19,6 +19,8 @@ namespace ApiKeyworks
             DataFim = fim;
         }
 
+        public Emprestimo() { }
+
         public static int GerarIDEmp()
         {
             string json;

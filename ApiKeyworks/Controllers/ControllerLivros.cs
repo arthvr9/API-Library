@@ -2,18 +2,20 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace ApiKeyworks.Controllers
 {
     [ApiController]
     [Route("[controller]")]
 
-    public class ControllerBiblio : ControllerBase
+    public class ControllerLivros : ControllerBase
     {
-        private readonly ILogger<ControllerBiblio> _logger;
+        private readonly ILogger<ControllerLivros> _logger;
         private readonly string jsonpathlivros;
+        
 
-        public ControllerBiblio(ILogger<ControllerBiblio> logger)
+        public ControllerLivros(ILogger<ControllerLivros> logger)
         {
             _logger = logger;
             jsonpathlivros = Path.Combine("C:", "Users", "arthu", "source", "repos", "ApiKeyworks", "ApiKeyworks", "Data", "livros.json");
@@ -25,7 +27,7 @@ namespace ApiKeyworks.Controllers
         {
             if (livro == null)
             {
-                return BadRequest("Livro data is null.");
+                return BadRequest("Livro == null");
             }
 
             try
