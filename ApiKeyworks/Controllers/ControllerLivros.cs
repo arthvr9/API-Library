@@ -14,7 +14,6 @@ namespace ApiKeyworks.Controllers
         private readonly ILogger<ControllerLivros> _logger;
         private readonly string jsonpathlivros;
         
-
         public ControllerLivros(ILogger<ControllerLivros> logger)
         {
             _logger = logger;
@@ -56,6 +55,24 @@ namespace ApiKeyworks.Controllers
                 _logger.LogError(ex, "Error saving Livro.");
                 return StatusCode(500, "Internal server error");
             }
+        }
+
+        [HttpGet(Name = "GetLivros")]
+
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            List<Livro> livros = new List<Livro>();
+
+            if (System.IO.File.Exists(jsonpathlivros))
+            {
+                string existingJson = System.IO.File.ReadAllText(jsonpathlivros);
+                if(!string.IsNullOrEmpty(existingJson))
+                {
+                    livros = JsonSerializer.Deserialize<List<Livro>>(existingJson) ?? new List<Livro>();
+                }
+                return Ok(livros);
+            }
+            return BadRequest();
         }
     }
 }
