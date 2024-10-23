@@ -1,26 +1,14 @@
 [
   {
     "Id": 0,
-    "ISBN": "2",
+    "ISBN": "23",
     "Nome": "aaaa",
-    "Autor": "aaaaaa"
+    "Autor": "aaaa"
   },
   {
     "Id": 1,
-    "ISBN": "2",
+    "ISBN": "25",
     "Nome": "aaaa",
-    "Autor": "aaaaaa"
-  },
-  {
-    "Id": 2,
-    "ISBN": "2",
-    "Nome": "aaaa",
-    "Autor": "aaaaaa"
-  },
-  {
-    "Id": 3,
-    "ISBN": "2",
-    "Nome": "aaaa",
-    "Autor": "aaaaaa"
+    "Autor": "aaaa"
   }
 ]
